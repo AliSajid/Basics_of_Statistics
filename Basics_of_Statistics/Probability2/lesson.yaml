@@ -75,13 +75,13 @@
 - Class: cmd_question
   Output: What is the area of the blue triangle?
   CorrectAnswer: .64
-  AnswerTests: equiv_val(.64)
+  AnswerTests: omnitest(.64)
   Hint: Multiply the base by the height and divide by 2.
 
 - Class: cmd_question
   Output: So, what is the probability that the kibble we throw at the bigger triangle will hit the blue portion? 
   CorrectAnswer: .64
-  AnswerTests: equiv_val(.64)
+  AnswerTests: omnitest(.64)
   Hint: The area of the blue triangle divided by the area of the big triangle gives you the probability.
 
 - Class: text
@@ -138,7 +138,7 @@
 - Class: cmd_question
   Output: What is the 50th percentile of the CDF F(x)=(x^2)/4 from the example above?
   CorrectAnswer: 1.414214
-  AnswerTests: equiv_val(sqrt(2))
+  AnswerTests: omnitest(correctVal = sqrt(2))
   Hint: Solve for the x such that x^2=4*.5=2
 
 - Class: mult_question

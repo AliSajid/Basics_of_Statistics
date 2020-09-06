@@ -103,7 +103,7 @@
 - Class: cmd_question
   Output: Use the answer to the previous question and the fact that the sum of all outcomes must sum to 1 to determine the probability of rolling a number less than or equal to 10.
   CorrectAnswer: 11/12
-  AnswerTests: equiv_val(correctVal=11/12)
+  AnswerTests: omnitest(correctVal=11/12)
   Hint: Subtract the previous answer from 1.
 
 - Class: figure
@@ -126,19 +126,19 @@
 - Class: cmd_question
   Output: What is the probability of drawing a jack?
   CorrectAnswer: 4/52
-  AnswerTests: equiv_val(1/13)
+  AnswerTests: omnitest(correctVal = 1/13)
   Hint: How many jacks are in the deck? Divide this number by the number of cards in the deck.
 
 - Class: cmd_question
   Output: If you're dealt a hand of 5 cards, what is the probability of getting all 5 of the same value?
   CorrectAnswer: 0
-  AnswerTests: equiv_val(0)
+  AnswerTests: omnitest(0)
   Hint: There are only 4 different suits in a deck.
 
 - Class: cmd_question
   Output: What is the probability of drawing a face card?
   CorrectAnswer: 3/13
-  AnswerTests: equiv_val(3/13)
+  AnswerTests: omnitest(correctVal=3/13)
   Hint: There are 3 face cards in each of the 4 suits in the deck.
 
 - Class: mult_question
@@ -151,7 +151,7 @@
 - Class: cmd_question
   Output: Suppose you draw a face card and don't replace it in the deck. What is the probability that when you draw a second card it also will be a face card of the same suit?
   CorrectAnswer: 2/51
-  AnswerTests: equiv_val(2/51)
+  AnswerTests: omnitest(correctVal=2/51)
   Hint: There are 2 face cards of the same suit left in the deck.
 
 - Class: text

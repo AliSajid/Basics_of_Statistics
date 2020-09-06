@@ -90,19 +90,19 @@
 - Class: cmd_question
   Output: Disease prevalence is .001. Test sensitivity (+ result with disease) is 99.7% and specificity (- result without disease) is 98.5%. First compute the numerator, P(+|D)*P(D). (This is also part of the denominator.)
   CorrectAnswer: .997*.001
-  AnswerTests: equiv_val(0.000997)
+  AnswerTests: omnitest(correctVal = 0.000997)
   Hint: Multiply the test sensitivity by the prevalence.
 
 - Class: cmd_question
   Output: Now solve for the remainder of the denominator, P(+|~D)*P(~D).
   CorrectAnswer: (1-.985)*(1-.001)
-  AnswerTests: equiv_val(.014985)
+  AnswerTests: omnitest(correctVal = .014985)
   Hint: Multiply the complement of test specificity by the complement of prevalence.
 
 - Class: cmd_question
   Output: Now put the pieces together to compute the probability that the patient has the disease given his positive test result, P(D|+). Plug your last two answers into the formula   P(+|D) * P(D) / ( P(+|D) * P(D) + P(+|~D) * P(~D) ) to compute P(D|+).
   CorrectAnswer: .000997/(.000997+.014985)
-  AnswerTests: equiv_val(.06238268)
+  AnswerTests: omnitest(correctVal = .06238268)
   Hint: Divide (.997*.001) by (.997*.001 + .015*.999)
 
 - Class: text

@@ -219,6 +219,13 @@
       "Repository": "CRAN",
       "Hash": "6e58bd3d6b3dd82a944cd6f05ade228f"
     },
+    "jpeg": {
+      "Package": "jpeg",
+      "Version": "0.1-8.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bc316c003aba520fc73d70ad53b5fc36"
+    },
     "jsonlite": {
       "Package": "jsonlite",
       "Version": "1.7.0",

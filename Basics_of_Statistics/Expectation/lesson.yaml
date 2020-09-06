@@ -18,7 +18,7 @@
 - Class: cmd_question
   Output: Consider the random variable X representing a roll of a fair dice. By 'fair' we mean all the sides are equally likely to appear. What is the expected value of X? 
   CorrectAnswer: 3.5
-  AnswerTests: equiv_val(3.5)
+  AnswerTests: omnitest(3.5)
   Hint: Add the numbers from 1 to 6 and divide by 6.
 
 - Class: cmd_question
@@ -54,7 +54,7 @@
 - Class: cmd_question
   Output: Suppose you were rolling our two loaded dice, dice_high and dice_low. You can use this  linearity property of expectation to compute the expected value of their average. Let X_hi and X_lo represent the respective outcomes of the dice roll. The expected value of the average is E((X_hi + X_lo)/2) or .5 *( E(X_hi)+E(X_lo) ). Compute this now. Remember we stored the expected values in edh and edl.
   CorrectAnswer: 3.5
-  AnswerTests: equiv_val(3.5)
+  AnswerTests: omnitest(correctVal = 3.5)
   Hint: Type '.5*(edh+edl)' at the command prompt.
 
 - Class: mult_question
@@ -71,7 +71,7 @@
   Output: It follows that for continuous random variables, E(X) is the area under the function t*f(t), where f(t) is the PDF (probability density function) of X. This definition borrows from the definition of center of mass of a continuous body.
 
 - Class: figure
-  Output: Here's a figure from the slides. It shows the constant (1) PDF on the left and the graph of t*f(t) on the right.
+  Output: Here's a figure of a pdf. It shows the constant (1) PDF on the left and the graph of t*f(t) on the right.
   Figure: plot1.R
   FigureType: new
 
@@ -150,12 +150,12 @@
 
 
 - Class: figure
-  Output: Here's another figure from the slides. It shows how a sample mean and the mean of averages spike together. The two shaded distributions come from the same data. The blue portion represents the density function of randomly generated standard normal data, 100000 samples. The pink portion represents the density function of 10000 averages, each of 10 random normals. (The original data was stored in a 10000 x 10 array and the average of each row was taken to  generate the pink data.)
+  Output: Here's another example. It shows how a sample mean and the mean of averages spike together. The two shaded distributions come from the same data. The blue portion represents the density function of randomly generated standard normal data, 100000 samples. The pink portion represents the density function of 10000 averages, each of 10 random normals. (The original data was stored in a 10000 x 10 array and the average of each row was taken to  generate the pink data.)
   Figure: normalMeans.R
   FigureType: new
 
 - Class: figure
-  Output: Here's another figure from the slides. Rolling a single die 10000 times yields the first figure. Each of the 6 possible outcomes appears with about the same frequency. The second figure is the histogram of outcomes of the average of rolling two dice. Similarly, the third figure is the histogram of averages of rolling three dice, and the fourth four dice. As we showed previously, the center or mean of the original distribution is 3.5 and that's exactly where all the panels are centered.
+  Output: Here's another example. Rolling a single die 10000 times yields the first figure. Each of the 6 possible outcomes appears with about the same frequency. The second figure is the histogram of outcomes of the average of rolling two dice. Similarly, the third figure is the histogram of averages of rolling three dice, and the fourth four dice. As we showed previously, the center or mean of the original distribution is 3.5 and that's exactly where all the panels are centered.
   Figure: diceRolls.R
   FigureType: new
 
@@ -211,9 +211,9 @@
   Output: Congrats! You've concluded this lesson on expectations. We hope it met yours.
 
 - Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
+  Output: Would you like to inform CDRL about your successful completion of
+    this lesson?
   CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""
+  AnswerChoices: Yes; No
+  AnswerTests: submit_log()
+  Hint: NULL
