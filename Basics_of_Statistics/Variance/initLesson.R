@@ -20,7 +20,7 @@ samsz <- 10
 #get correct paths for plotting
 pathtofile <- function(fileName){
   mypath <- file.path(.get_course_path(),
-  	"Statistical_Inference","Variance",
+  	"Basics_of_Statistics","Variance",
                       fileName)
 }
 fxfer <- function(fileName){
