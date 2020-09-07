@@ -1,2 +1,2 @@
 # Histogram
-hist(cars$mpgCity, xlab="Miles per Gallon (MPG)", main="")
+hist(cars$mpg_city, xlab="Miles per Gallon (MPG)", main="")

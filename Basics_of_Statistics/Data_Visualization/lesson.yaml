@@ -79,7 +79,7 @@
 - Class: exact_question
   Output: How many cars get 16-20 MPG in the city?
   CorrectAnswer: '25'
-  AnswerTests: exact=25
+  AnswerTests: omnitest(correctVal=25)
   Hint: Look at the highest value on the y-axis that the '16-20' bar reaches.
 
 - Class: figure
@@ -143,7 +143,7 @@
     histogram?
   AnswerChoices: Symmetric; Right-skewed; Left-skewed
   CorrectAnswer: Right-skewed
-  AnswerTests: word= Right-skewed
+  AnswerTests: omnitest(correctVal = "Right-skewed")
   Hint: Look to see which end of the tail extends longer. The data will be skewed
     in that direction. Or, look to see whether the tails extend to relatively the
     same length on each side.
@@ -154,7 +154,7 @@
     equal to the MEAN?
   AnswerChoices: Greater than; Less than; Equal to
   CorrectAnswer: Less than
-  AnswerTests: word= Less than
+  AnswerTests: omnitest(correctVal="Less than")
   Hint: Reread above to figure out what the value of the median is in comparison to
     the mean when a distribution is right-skewed.
 
@@ -172,10 +172,6 @@
     items in the data set. The easiest way to understand a stem-and-leaf plot is to
     see one!
 
-- Class: video
-  Output: Would you like to watch a brief YouTube video on stem-and-leaf plots?
-  VideoLink: http://youtu.be/OaJXJduRiIE
-
 - Class: figure
   Output: I have created a stem-and-leaf plot above using the same values for the
     'mpgCity' variable as we just used for our histogram. As you can see, a stem-and-leaf
@@ -189,7 +185,7 @@
   Output: Demonstrated on this stem-and-leaf plot, how many occurences of the value
     '22' are there in this particular data set?
   CorrectAnswer: '4'
-  AnswerTests: exact=4
+  AnswerTests: omnitest(correctVal=4)
 
 - Class: figure
   Output: The final plot that can be used for discrete or continuous variables is
@@ -205,7 +201,7 @@
     MEDIAN, THIRD QUARTILE (Q3), and MAXIMUM of a data set. The R-command 'summary(cars$price)'
     returns values for these main descriptive statistics. Try this now.
   CorrectAnswer: summary(cars$price)
-  AnswerTests: swirl1cmd=summary(cars$price)
+  AnswerTests: omnitest(correctExpr='summary(cars$price)')
 
 - Class: text
   Output: Congrats! You've concluded this brief introduction to data visualization.
