@@ -1,19 +1,15 @@
-# So swirl does not repeat execution of plot commands
+# Put custom tests in this file.
+
+# Uncommenting the following line of code will disable
+# auto-detection of new variables and thus prevent swirl from
+# executing every command twice, which can slow things down.
+
 AUTO_DETECT_NEWVAR <- FALSE
 
-# Returns TRUE if e$expr matches any of the expressions given
-# (as characters) in the argument.
-ANY_of_exprs <- function(...){
-  e <- get("e", parent.frame())
-  any(sapply(c(...), function(expr)omnitest(expr)))
-}
-
-equiv_val <- function(correctVal){
-  e <- get("e", parent.frame()) 
-  #print(paste("User val is ",e$val,"Correct ans is ",correctVal))
-  isTRUE(all.equal(correctVal,e$val))
-  
-}
+# However, this means that you should detect user-created
+# variables when appropriate. The answer test, creates_new_var()
+# can be used for for the purpose, but it also re-evaluates the
+# expression which the user entered, so care must be taken.
 
 # Get the swirl state
 getState <- function(){
@@ -22,44 +18,41 @@ getState <- function(){
   environment(sys.function(1))$e
 }
 
-# Get the value which a user either entered directly or was computed
-# by the command he or she entered.
-getVal <- function(){
-  getState()$val
+# Retrieve the log from swirl's state
+getLog <- function(){
+  getState()$log
 }
 
-# Get the last expression which the user entered at the R console.
-getExpr <- function(){
-  getState()$expr
-}
-
-coursera_on_demand <- function(){
-  selection <- getState()$val
-  if(selection == "Yes"){
-    email <- readline("What is your email address? ")
-    token <- readline("What is your assignment token? ")
-    
-    payload <- sprintf('{  
-      "assignmentKey": "sLzbQa8cEeWxaw7Jay15BQ",
-      "submitterEmail": "%s",  
-      "secret": "%s",  
-      "parts": {  
-        "fisYn": {  
-          "output": "correct"  
-        }  
-      }  
-    }', email, token)
-    url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
+submit_log <- function(){
   
-    respone <- httr::POST(url, body = payload)
-    if(respone$status_code >= 200 && respone$status_code < 300){
-      message("Grade submission succeeded!")
-    } else {
-      message("Grade submission failed.")
-      message("Press ESC if you want to exit this lesson and you")
-      message("want to try to submit your grade at a later time.")
-      return(FALSE)
-    }
-  }
-  TRUE
+  p <- function(x, p, f, l = length(x)){if(l < p){x <- c(x, rep(f, p - l))};x}
+  
+  api_url <- "https://04ldlwudkg.execute-api.us-east-2.amazonaws.com"
+  
+  log_ <- getLog()
+  nrow_ <- max(unlist(lapply(log_, length)))
+  log_tbl <- data.frame(user = rep(log_$user, nrow_),
+                        name = rep(log_$user, nrow_),
+                        course_name = rep(log_$course_name, nrow_),
+                        lesson_name = rep(log_$lesson_name, nrow_),
+                        question_number = p(log_$question_number, nrow_, NA),
+                        correct = p(log_$correct, nrow_, NA),
+                        attempt = p(log_$attempt, nrow_, NA),
+                        skipped = p(log_$skipped, nrow_, NA),
+                        datetime = p(log_$datetime, nrow_, NA),
+                        stringsAsFactors = FALSE)
+  name <- log_$user
+  course <- log_$course_name
+  lesson <- log_$lesson_name
+  
+  out <- list(
+    completed = TRUE,
+    name = name,
+    course = course,
+    lesson = lesson,
+    log = log_tbl
+  )
+  
+  httr::POST(api_url, body = out, encode = "json")
+  
 }
