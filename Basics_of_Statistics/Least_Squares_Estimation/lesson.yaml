@@ -93,7 +93,7 @@
   Hint: Since you're swapping X and Y, swap the X and Y in the formula. Swapping X and Y in the correlation function doesn't change anything.
 
 - Class: figure
-  Output: We'll close with a final display of source code from the slides. It plots the galton data with three regression lines, the original in red with the children as the outcome,  a new blue line with the parents' as outcome and childrens' as predictor, and a black line with the slope scaled so it equals the ratio of the standard deviations. 
+  Output: We'll close with a final display of source code. It plots the galton data with three regression lines, the original in red with the children as the outcome,  a new blue line with the parents' as outcome and childrens' as predictor, and a black line with the slope scaled so it equals the ratio of the standard deviations. 
   Figure: demofile2.R
   FigureType: new
 
