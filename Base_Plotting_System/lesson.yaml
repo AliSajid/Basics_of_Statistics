@@ -121,7 +121,7 @@
 - Class: cmd_question
   Output: Variety is the spice of life. You might recognize some of these such as col and lwd from previous swirl lessons. You can always run ?par to see what they do. For now, run the command par()$pin and see what you get.
   CorrectAnswer: par()$pin
-  AnswerTests: ANY_of_exprs('par()$pin','par(\"pin\")','par(\'pin\')')
+  AnswerTests: any_of_exprs('par()$pin','par(\"pin\")','par(\'pin\')')
   Hint: Type par()$pin at the command prompt.
  
 - Class: mult_question
