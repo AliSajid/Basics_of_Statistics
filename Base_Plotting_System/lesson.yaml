@@ -134,7 +134,7 @@
 - Class: cmd_question
   Output: Now, run the command par("fg") or or par('fg') or par()$fg and see what you get.
   CorrectAnswer: par()$fg
-  AnswerTests: ANY_of_exprs('par(\"fg\")','par()$fg','par(\'fg\')')
+  AnswerTests: any_of_exprs('par(\"fg\")','par()$fg','par(\'fg\')')
   Hint: Type par()$fg OR par('fg') OR par("fg") at the command prompt.
  
 - Class: mult_question
@@ -158,7 +158,7 @@
 - Class: cmd_question
   Output: The plot character default is the open circle, but it "can either be a single character or an integer code for one of a set of graphics symbols." Run the command par("pch") to see the integer value of the default. When you need to, you can use R's Documentation (?pch) to find what the other values mean.
   CorrectAnswer: par("pch")
-  AnswerTests: ANY_of_exprs('par(\"pch\")','par()$pch','par(\'pch\')')
+  AnswerTests: any_of_exprs('par(\"pch\")','par()$pch','par(\'pch\')')
   Hint: Type par()$pch OR par('pch') OR par("pch") at the command prompt.
  
 - Class: mult_question
@@ -171,7 +171,7 @@
 - Class: cmd_question
   Output: Run the command par("lty") to see the  default line type. 
   CorrectAnswer: par("lty")
-  AnswerTests: ANY_of_exprs('par(\"lty\")','par()$lty','par(\'lty\')')
+  AnswerTests: any_of_exprs('par(\"lty\")','par()$lty','par(\'lty\')')
   Hint: Type par()$lty OR par('lty') OR par("lty") at the command prompt.
 
 - Class: text
